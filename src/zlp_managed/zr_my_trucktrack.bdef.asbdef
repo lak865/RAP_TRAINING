@@ -1,0 +1,45 @@
+managed;
+with draft;
+
+define behavior for ZR_MY_TRUCKTRACK //alias <alias_name>
+ implementation in class zbp_r_my_trucktrack unique
+//strict ( 2 );
+persistent table zmy_trucktrack
+draft table zmy_trucktrack_d
+lock master total etag Lastchanged
+authorization master ( instance )
+etag master LocalLastChanged
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update ) Truckregnum;
+  association _driver { create; }
+
+  determination setintialstatus on modify { create; }
+  validation validateDriverID on save { create; }
+
+  mapping for zmy_trucktrack{
+  Truckregnum = truckregnum;
+  Truckmake = truckmake;
+  Truckpuc = truckpuc;
+  Lastchanged = lastchanged;
+  Createdby = createdby;
+  Changedby = changedby;
+  LocalLastChanged = locallastchanged;
+  }
+}
+
+define behavior for ZR_MY_TRUCKDZRIVER //alias <alias_name>
+persistent table zmy_truckdriver
+draft table zmy_truckdriverd
+lock dependent by _truck
+authorization dependent by _truck
+etag master LocalLastChanged
+{
+  update;
+  delete;
+  field ( readonly ) Truckregnum;
+  field ( readonly : update ) Driverid;
+  association _truck;
+}

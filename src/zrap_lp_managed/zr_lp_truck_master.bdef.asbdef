@@ -1,0 +1,15 @@
+managed implementation in class zbp_r_lp_truck_master unique;
+//strict ( 2 );
+with draft;
+define behavior for ZR_LP_TRUCK_MASTER //alias <alias_name>
+persistent table zlp_truck_track
+draft table ztrucktrackdlp
+lock master total etag Lastchanged
+authorization master ( instance )
+etag master Lastchanged
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Truckregnum;
+}

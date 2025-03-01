@@ -1,0 +1,27 @@
+unmanaged implementation in class zbp_r_soheader_lptp unique;
+strict ( 2 );
+
+define behavior for ZR_SOHeader_LPTP //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Vbeln;
+  association _soitem { create; }
+}
+
+define behavior for ZR_SOITEM_LPTP //alias <alias_name>
+//late numbering
+lock dependent by _soheader
+authorization dependent by _soheader
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Vbeln, Posnr;
+  association _soheader;
+}

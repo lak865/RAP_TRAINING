@@ -1,0 +1,17 @@
+@Metadata.layer: #CORE
+annotate entity ZC_LP_TRUCKDRIVER
+    with 
+{
+ 
+@UI.lineItem:[ { position: 10, label: 'Truck Registration Number' } ]
+    Truckregnum;
+    @UI.lineItem:[ { position: 10, label: 'Driver ID' } ]
+    Driverid;
+    @UI.lineItem:[ { position: 10, label: 'Driver First Name' } ]
+    Driverfirstname;
+    @UI.lineItem:[ { position: 10, label: 'Driver Last Nmae' } ]
+    Driverlastname;
+    @UI.lineItem:[ { position: 10, label: 'Drivers Licence' } ]
+    Driverslicence;
+    
+}

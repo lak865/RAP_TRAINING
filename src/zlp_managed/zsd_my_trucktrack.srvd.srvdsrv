@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition'
+define service ZSD_MY_TRUCKTRACK {
+  expose ZC_MY_TRUCKTRACK  as trucks;
+  expose ZC_MY_TRUCKDRIVER as driver;
+}

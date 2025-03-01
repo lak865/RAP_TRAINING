@@ -1,0 +1,5 @@
+CLASS zbp_r_soheader_lptp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_soheader_lptp.
+ENDCLASS.
+
+CLASS zbp_r_soheader_lptp IMPLEMENTATION.
+ENDCLASS.

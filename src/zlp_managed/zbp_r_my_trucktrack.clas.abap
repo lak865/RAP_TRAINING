@@ -1,0 +1,5 @@
+CLASS zbp_r_my_trucktrack DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_my_trucktrack.
+ENDCLASS.
+
+CLASS zbp_r_my_trucktrack IMPLEMENTATION.
+ENDCLASS.
